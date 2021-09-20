@@ -8,19 +8,22 @@ const server = express();
 
 const pokeData = require('./assets/poke.json')
 
-const PORT = 3001;
+const PORT = process.env.PORT;
 
 // localhost:3005/
+// https://class07-301d33.herokuapp.com/
 server.get('/',(req,res)=>{
     res.status(200).send('home route')
 })
 
 // localhost:3005/test
+// https://class07-301d33.herokuapp.com/test
 server.get('/test',(request,response)=>{
     response.send('api server is working')
 })
 
 // localhost:3005/getPokemon?pokeName=charmander&pokeLevel=10
+// https://class07-301d33.herokuapp.com/?pokeName=charmander&pokeLevel=10
 server.get('/getPokemon',(req,res)=>{
     // res.send(pokeData);
 
